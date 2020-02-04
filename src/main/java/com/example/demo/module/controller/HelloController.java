@@ -1,7 +1,7 @@
 package com.example.demo.module.controller;
 
 import com.example.demo.module.model.User;
-import com.example.demo.utils.DBUtils;
+import com.example.demo.module.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,8 @@ public class HelloController {
     @Autowired
     private JdbcTemplate jdbcTemplate;
     @Autowired
-    private DBUtils dBUtils;
+    private UserService userService;
+
     @RequestMapping("hello")
     @ResponseBody
     public String hello(){
@@ -39,7 +40,7 @@ public class HelloController {
     public String getUserData(){
         User user=new User();
         //user.setId("1");
-        List<Map<String, Object>> maps=dBUtils.queryListMap(user);
+        List<Map<String, Object>> maps=userService.query(user);
         return maps.toString();
     }
 }

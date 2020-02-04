@@ -163,7 +163,7 @@ public class DBUtils {
 
         Object[] objects = new Object[listValues.size()];
         listValues.toArray(objects);
-        return JsonUtils.ListMapToListBean(t, jdbcTemplate.queryForList(sql, objects));
+        return JsonUtils.listMapToListBean(t, jdbcTemplate.queryForList(sql, objects));
     }
 
     // 根据参数查询多个值

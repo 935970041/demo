@@ -20,7 +20,7 @@ public class JsonUtils {
      * @param list
      * @return
      */
-    public static <T> JSONArray ListBeanToJson(List<T> list) {
+    public static <T> JSONArray listBeanToJson(List<T> list) {
         ValueFilter filter = new ValueFilter() {
             @Override
             public Object process(Object obj, String s, Object v) {
@@ -125,7 +125,7 @@ public class JsonUtils {
 
 
     // map转bean
-    public static <T> T MapToBean(T t, Map<String, Object> map) {
+    public static <T> T mapToBean(T t, Map<String, Object> map) {
         try {
             BeanUtils.populate(t, map);
         } catch (IllegalAccessException | InvocationTargetException e) {
@@ -135,7 +135,7 @@ public class JsonUtils {
     }
 
     // ListMap转ListBean
-    public static <T> List<T> ListMapToListBean(T t, List<Map<String, Object>> listMap) {
+    public static <T> List<T> listMapToListBean(T t, List<Map<String, Object>> listMap) {
         List<T> resultAll = new ArrayList<>();
         listMap.forEach((e) -> {
             try {

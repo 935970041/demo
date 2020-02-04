@@ -1,4 +1,4 @@
 function f() {
-    alert("hello world")
+    alert("这个是引入js的测试")
 }
 f()
