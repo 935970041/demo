@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 
  * @description: 数据库操作工具类封装1.0.0
  * @date:2018年8月16日 上午9:42:41
  * @author:ZhangZY
@@ -116,7 +115,7 @@ public class DBUtils {
             e.printStackTrace();
         }
         String sql = "select * from " + tableName + " where  id=" + "\'" + id + "\'";
-        return JsonUtils.MapToBean(t, jdbcTemplate.queryForMap(sql));
+        return JsonUtils.mapToBean(t, jdbcTemplate.queryForMap(sql));
     }
 
     // 查询单个po,使用id进行查询
